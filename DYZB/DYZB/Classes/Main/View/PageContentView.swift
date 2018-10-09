@@ -14,13 +14,13 @@ class PageContentView: UIView {
     
     //MARK:- 定義屬性
     private var childVcs : [UIViewController]
-    private var parentViewController : UIViewController
+    private weak var parentViewController : UIViewController?
     
     //MARK:- 懶加載屬性
-    private lazy var collectionView : UICollectionView = {
+    private lazy var collectionView : UICollectionView = { [weak self] in
         // 1.創建layout
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = self.bounds.size
+        layout.itemSize = (self?.bounds.size)!
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
@@ -37,7 +37,7 @@ class PageContentView: UIView {
     }()
     
     //MARK:- 自定義構造函數
-    init(frame: CGRect, childVcs: [UIViewController], parentViewController: UIViewController) {
+    init(frame: CGRect, childVcs: [UIViewController], parentViewController: UIViewController?) {
         self.childVcs = childVcs
         self.parentViewController = parentViewController
         super.init(frame: frame)
@@ -57,7 +57,7 @@ extension PageContentView {
     private func setupUI() {
         // 1.把所有的子控制器添加父控制器中
         for childVc in childVcs {
-            parentViewController.addChild(childVc)
+            parentViewController?.addChild(childVc)
         }
         
         // 2.添加UICollectionView，用在Cell中存放控制器的View
@@ -87,6 +87,12 @@ extension PageContentView : UICollectionViewDataSource {
         
         return cell
     }
-    
-    
+}
+
+//MARK:- 對外暴露的方法
+extension PageContentView {
+    func setCurrentIndex (currentIndex : Int) {
+        let offsetX = CGFloat(currentIndex) * collectionView.frame.width
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
+    }
 }

@@ -8,15 +8,21 @@
 
 import UIKit
 
+// MARK:- 定義協議
+protocol PageTitleViewDelegate : class {
+    func pageTitleView(_ titleView : PageTitleView, selectedIndex index : Int)
+}
+
 //MARK:- 定義常數
 private let kScrollLineH: CGFloat = 2
-//private let kNormalColor : (CGFloat, CGFloat, CGFloat) = (85, 85, 85)
-//private let kSelectColor : (CGFloat, CGFloat, CGFloat) = (255, 128, 0)
+
 
 //MARK:- 定義PageTitleView類
 class PageTitleView: UIView {
     //MARK:- 定義屬性
+    fileprivate var currentIndex : Int = 0
     fileprivate var titles : [String]
+    weak var delegate : PageTitleViewDelegate?
     
     //MARK:- 懶加載屬性
     fileprivate lazy var titleLabels : [UILabel] = [UILabel]()
@@ -86,6 +92,11 @@ extension PageTitleView {
             // 4.把label添加到scrollView中
             scrollView.addSubview(label)
             titleLabels.append(label)
+            
+            // 5.給Label添加手勢
+            label.isUserInteractionEnabled = true
+            let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.titleLabelClick(tapGes:)))
+            label.addGestureRecognizer(tapGes)
         }
     }
     
@@ -105,5 +116,33 @@ extension PageTitleView {
         // 2.2.設置scrollLine的屬性
         scrollView.addSubview(scrollLine)
         scrollLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.height - kScrollLineH, width: firstLabel.frame.width, height: kScrollLineH)
+    }
+}
+
+
+//MARK:- 監聽Label的點擊
+extension PageTitleView {
+    @objc private func titleLabelClick(tapGes : UITapGestureRecognizer) {
+        // 1.獲取當前的Label
+        guard let currentLabel = tapGes.view as? UILabel else { return }
+        
+        // 2.獲取之前的Label
+        let oldLabel = titleLabels[currentIndex]
+        
+        // 3.切換文字的顏色
+        currentLabel.textColor = UIColor.orange
+        oldLabel.textColor = UIColor.darkGray
+        
+        // 4.保存最新 Label 的下標值
+        currentIndex = currentLabel.tag
+        
+        // 5.滾動條位置發生改變
+        let scrollLineX = CGFloat(currentIndex) * scrollLine.frame.width
+        UIView.animate(withDuration: 0.15) {
+            self.scrollLine.frame.origin.x = scrollLineX
+        }
+        
+        // 6.通知代理
+        delegate?.pageTitleView(self, selectedIndex: currentIndex)
     }
 }

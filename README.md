@@ -7,8 +7,11 @@
 
 二.封裝PageContentView
     。自定義View，並且自定義構造函數
-
+    。添加子控件：1> UICollectionView 2> 給UICollectionView設置內容
 
 三.處理PageTitleView和PageContentView的邏輯
+    1.PageTitleView中發生點擊
+        。將PageTitleView中邏輯進行處理
+        。告知PageContentView滾動到正確的控制器
 
 

@@ -16,11 +16,12 @@ class HomeViewController: UIViewController {
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["推薦", "游戲", "娛樂", "趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
-//        titleView.backgroundColor = UIColor.purple
+        titleView.delegate = self
+        
         return titleView
-        }()
+    }()
     
-    fileprivate lazy var pageContentView: PageContentView = {
+    fileprivate lazy var pageContentView: PageContentView = { [weak self] in
         // 1.確定內容的frame
         let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH
         let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
@@ -32,18 +33,18 @@ class HomeViewController: UIViewController {
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVcs.append(vc)
         }
- 
+        
         let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
         return contentView
         
-    }()
-
+        }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //設置UI介面
         setupUI()
-  }
+    }
 }
 // MARK:- 設置UI介面
 extension HomeViewController {
@@ -74,5 +75,13 @@ extension HomeViewController {
         let qrcodeItem = UIBarButtonItem(imageName: "Image_scan", highImageName: "Image_scan_click", size: size)
         
         navigationItem.rightBarButtonItems = [historyItem, searchItem, qrcodeItem]
+    }
+}
+
+//MARK:- 遵守PageTitleViewDelegate
+extension HomeViewController : PageTitleViewDelegate {
+    func pageTitleView(_ titleView: PageTitleView, selectedIndex index: Int) {
+        //print(index) //拿到這個index後就可以傳給pageContentView讓他做一些設置
+        pageContentView.setCurrentIndex(currentIndex: index)
     }
 }
