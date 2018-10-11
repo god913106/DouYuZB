@@ -85,3 +85,10 @@ extension HomeViewController : PageTitleViewDelegate {
         pageContentView.setCurrentIndex(currentIndex: index)
     }
 }
+
+// MARK:- 遵守PageContentViewDelegate
+extension HomeViewController : PageContentViewDelegate {
+    func pageContentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleWithProgress(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+}
