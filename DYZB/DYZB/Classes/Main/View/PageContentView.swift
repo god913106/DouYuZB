@@ -21,7 +21,7 @@ class PageContentView: UIView {
     private var childVcs : [UIViewController]
     private weak var parentViewController : UIViewController?
     fileprivate var startOffsetX : CGFloat = 0
-    fileprivate var isForbidScrollDelegate : Bool = false
+    fileprivate var isForbidScrollDelegate : Bool = false  //禁止滾動代理方法 默認不禁止
     weak var delegate : PageContentViewDelegate?
     
     //MARK:- 懶加載屬性
@@ -50,6 +50,7 @@ class PageContentView: UIView {
     init(frame: CGRect, childVcs: [UIViewController], parentViewController: UIViewController?) {
         self.childVcs = childVcs
         self.parentViewController = parentViewController
+        
         super.init(frame: frame)
         
         //設置UI
@@ -59,6 +60,7 @@ class PageContentView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 
@@ -104,12 +106,16 @@ extension PageContentView : UICollectionViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
-        isForbidScrollDelegate = false
-        
+        isForbidScrollDelegate = false //一旦開始滾動的話 就默認不禁止滾動
+ 
         startOffsetX = scrollView.contentOffset.x
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // 0.判斷是是否點擊事件
+        if isForbidScrollDelegate { return }
+        
         // 1.定義獲取需要的數據
         var progress : CGFloat = 0 //滾動的進度
         var sourceIndex : Int = 0 //當前位子的index
@@ -155,11 +161,12 @@ extension PageContentView : UICollectionViewDelegate {
     }
 }
 
+
 //MARK:- 對外暴露的方法
 extension PageContentView {
     func setCurrentIndex (currentIndex : Int) {
         
-        // 1.記錄需要進制執行代理方法
+        // 1.記錄需要禁止執行代理方法
         isForbidScrollDelegate = true
         
         // 2.滾動正確的位置

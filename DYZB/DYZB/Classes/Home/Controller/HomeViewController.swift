@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
         }
         
         let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        contentView.delegate = self //這樣contentView滑動時 就會通知給pageTitleView
         return contentView
         
         }()
