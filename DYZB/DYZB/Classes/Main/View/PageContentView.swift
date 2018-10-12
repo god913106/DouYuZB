@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK:- 定義協議
 protocol PageContentViewDelegate : class {
     func pageContentView(_ contentView : PageContentView, progress : CGFloat, sourceIndex : Int, targetIndex : Int)
 }

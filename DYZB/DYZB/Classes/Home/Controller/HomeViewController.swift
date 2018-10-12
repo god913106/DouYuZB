@@ -11,6 +11,7 @@ import UIKit
 private let kTitleViewH : CGFloat = 40
 
 class HomeViewController: UIViewController {
+    
     //MARK:- 懶加載屬性
     fileprivate lazy var pageTitleView : PageTitleView = {
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH, width: kScreenW, height: kTitleViewH)
@@ -23,12 +24,13 @@ class HomeViewController: UIViewController {
     
     fileprivate lazy var pageContentView: PageContentView = { [weak self] in
         // 1.確定內容的frame
-        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH
+        let contentH = kScreenH - kStatusBarH - kNavigationBarH - kTitleViewH - kTabBarH
         let contentFrame = CGRect(x: 0, y: kStatusBarH + kNavigationBarH + kTitleViewH, width: kScreenW, height: contentH)
         
         // 2.確定所有的子控制器
         var childVcs = [UIViewController]()
-        for _ in 0..<4 {
+        childVcs.append(RecommendViewController())
+        for _ in 0..<3 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVcs.append(vc)

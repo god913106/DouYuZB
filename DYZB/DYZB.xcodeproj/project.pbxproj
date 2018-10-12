@@ -10,6 +10,7 @@
 		4234145121675CE100697623 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234145021675CE100697623 /* MainViewController.swift */; };
 		42341459216769C900697623 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42341458216769C900697623 /* HomeViewController.swift */; };
 		4234145C2167730800697623 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234145B2167730800697623 /* UIBarButtonItem-Extension.swift */; };
+		4251B1E421709DE700E83E71 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251B1E321709DE700E83E71 /* RecommendViewController.swift */; };
 		4259DBF9216B4F4A0017C242 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259DBF8216B4F4A0017C242 /* PageTitleView.swift */; };
 		4259DBFB216B58070017C242 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259DBFA216B58070017C242 /* Common.swift */; };
 		4259DBFD216B716C0017C242 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259DBFC216B716C0017C242 /* PageContentView.swift */; };
@@ -28,6 +29,7 @@
 		4234145021675CE100697623 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		42341458216769C900697623 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4234145B2167730800697623 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		4251B1E321709DE700E83E71 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		4259DBF8216B4F4A0017C242 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		4259DBFA216B58070017C242 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		4259DBFC216B716C0017C242 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				42D0A827216755DA008DC02D /* Home.storyboard */,
 				42341458216769C900697623 /* HomeViewController.swift */,
+				4251B1E321709DE700E83E71 /* RecommendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			files = (
 				42D0A80921662BD1008DC02D /* AppDelegate.swift in Sources */,
 				42F6C596216CA99C0002B0E9 /* UIColor-Extension.swift in Sources */,
+				4251B1E421709DE700E83E71 /* RecommendViewController.swift in Sources */,
 				4234145121675CE100697623 /* MainViewController.swift in Sources */,
 				4259DBF9216B4F4A0017C242 /* PageTitleView.swift in Sources */,
 				4259DBFD216B716C0017C242 /* PageContentView.swift in Sources */,
