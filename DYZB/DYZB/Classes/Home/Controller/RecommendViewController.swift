@@ -31,15 +31,15 @@ class RecommendViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: kItemMargin, bottom: 0, right: kItemMargin) //設定間距 這這樣才才會左中右三個10
         
         // 2.创建UICollectionView
-        print(self.view.bounds)
+        
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
-        
+        collectionView.delegate = self
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth] //自動調整與superView的Height，Width
         
         collectionView.register(UINib(nibName: "CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
-        
+        collectionView.register(UINib(nibName: "CollectionPrettyCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCellID)
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
         return collectionView
         }()
@@ -67,7 +67,7 @@ extension RecommendViewController {
 
 
 // MARK:- 遵守UICollectionView的数据源协议
-extension RecommendViewController : UICollectionViewDataSource {
+extension RecommendViewController : UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     
     //總共12個群組
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -86,9 +86,14 @@ extension RecommendViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // 1.獲得Cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+        var cell : UICollectionViewCell!
         
-//        cell.backgroundColor = UIColor.red
+        // 2.取出Cell
+        if indexPath.section == 1 {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath)
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+        }
         
         return cell
     }
@@ -99,5 +104,15 @@ extension RecommendViewController : UICollectionViewDataSource {
         
         return headerView
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if indexPath.section == 1 {
+            return CGSize(width: kItemW, height: kPrettyItemH)
+        }
+        return CGSize(width: kItemW, height: kNormalItemH)
+    }
+    
     
 }
