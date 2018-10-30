@@ -36,7 +36,7 @@
                     <color key="currentPageIndicatorTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="JpY-Bu-WfT" firstAttribute="leading" secondItem="UWf-f7-CXf" secondAttribute="leading" id="3fP-PI-SLS"/>
                 <constraint firstAttribute="trailing" secondItem="h2y-pG-S11" secondAttribute="trailing" constant="10" id="Bj7-LQ-yDc"/>

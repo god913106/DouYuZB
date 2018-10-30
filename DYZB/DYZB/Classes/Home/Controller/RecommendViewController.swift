@@ -15,6 +15,7 @@ private let kPrettyItemH = kItemW * 4 / 3
 private let kHeaderViewH : CGFloat = 50 //組頭讓cell看起來來沒有連在一起
 
 private let kCycleViewH = kScreenW * 3 / 8
+private let kGameViewH : CGFloat = 90
 
 
 private let kNormalCellID = "kNormalCellID"
@@ -26,12 +27,19 @@ class RecommendViewController: UIViewController {
     // MARK:- 懒加载属性
     fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     //加到collectionView裡才可以滾動
-    fileprivate var cycleView : RecommendCycleView = {
+    fileprivate lazy var cycleView : RecommendCycleView = {
         let cycleView = RecommendCycleView.recommendCycleView()
-        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        cycleView.frame = CGRect(x: 0, y: -(kCycleViewH + kGameViewH), width: kScreenW, height: kCycleViewH)
         return cycleView
     }()
-        
+    
+    //懶加載gameView
+    fileprivate lazy var gameView : RecommendGameView = {
+        let gameView = RecommendGameView.recommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        return gameView
+    }()
+ 
     private lazy var collectionView : UICollectionView = {[unowned self] in
         // 1.创建布局
         let layout = UICollectionViewFlowLayout() //流水布局
@@ -79,8 +87,11 @@ extension RecommendViewController {
         // 2.將CycleView添加到控制器的UICollectionView中
         collectionView.addSubview(cycleView)
         
-        // 3. 設置collectionView的內邊距 才會讓輪播View直接顯示出來
-        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
+        // 3.將gameView添加到控制器的UICollectionView中
+        collectionView.addSubview(gameView)
+        
+        // 4. 設置collectionView的內邊距 才會讓輪播View直接顯示出來
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH + kGameViewH , left: 0, bottom: 0, right: 0)
     }
 }
 
