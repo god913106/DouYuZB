@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="162" height="198"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-KH-EfF">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-KH-EfF">
                         <rect key="frame" x="0.0" y="174" width="46" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="bwM-aw-w6R"/>
@@ -38,40 +38,42 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" image="live_cell_default_phone" translatesAutoresizingMaskIntoConstraints="NO" id="GwP-Gm-B4U">
                         <rect key="frame" x="0.0" y="0.0" width="162" height="152"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6666在線" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfP-UU-RTR">
-                        <rect key="frame" x="97" y="5" width="60" height="20"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-2g-I2G">
+                        <rect key="frame" x="94" y="8" width="60" height="20"/>
                         <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="5q7-SO-J2J"/>
-                            <constraint firstAttribute="width" constant="60" id="XuF-4b-VPg"/>
+                            <constraint firstAttribute="width" constant="60" id="MbC-uG-jH6"/>
+                            <constraint firstAttribute="height" constant="20" id="uZG-hJ-U9L"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="3"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        </userDefinedRuntimeAttributes>
-                    </label>
+                        <state key="normal" title="6666在線">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="hfP-UU-RTR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="AOH-WT-8I7"/>
                 <constraint firstItem="HDv-KH-EfF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Fr6-Mk-8TI"/>
                 <constraint firstAttribute="trailing" secondItem="GwP-Gm-B4U" secondAttribute="trailing" id="IhL-OZ-i96"/>
+                <constraint firstAttribute="trailing" secondItem="4CK-2g-I2G" secondAttribute="trailing" constant="8" id="M78-lm-jOP"/>
                 <constraint firstItem="GwP-Gm-B4U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RbO-r6-OyA"/>
                 <constraint firstItem="GwP-Gm-B4U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Rqv-3G-yLF"/>
                 <constraint firstItem="txT-t5-I0v" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UXi-17-BEd"/>
                 <constraint firstItem="HDv-KH-EfF" firstAttribute="top" secondItem="txT-t5-I0v" secondAttribute="bottom" constant="1" id="W9a-92-1vv"/>
                 <constraint firstItem="txT-t5-I0v" firstAttribute="top" secondItem="GwP-Gm-B4U" secondAttribute="bottom" constant="5" id="YLH-An-eVG"/>
                 <constraint firstAttribute="bottom" secondItem="HDv-KH-EfF" secondAttribute="bottom" constant="10" id="Yy3-rY-anA"/>
-                <constraint firstAttribute="trailing" secondItem="hfP-UU-RTR" secondAttribute="trailing" constant="5" id="jGV-89-U5e"/>
+                <constraint firstItem="4CK-2g-I2G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="gzT-cC-xlz"/>
                 <constraint firstAttribute="trailing" secondItem="txT-t5-I0v" secondAttribute="trailing" constant="5" id="rFQ-WB-TNg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="162" height="198"/>
+            <connections>
+                <outlet property="cityBtn" destination="HDv-KH-EfF" id="hSH-KH-F1J"/>
+                <outlet property="iconImageView" destination="GwP-Gm-B4U" id="BqV-5e-Vux"/>
+                <outlet property="nickNameLabel" destination="txT-t5-I0v" id="xmb-zl-Cw6"/>
+                <outlet property="onlineBtn" destination="4CK-2g-I2G" id="R3B-MI-pgc"/>
+            </connections>
             <point key="canvasLocation" x="46.399999999999999" y="106.14692653673164"/>
         </collectionViewCell>
     </objects>

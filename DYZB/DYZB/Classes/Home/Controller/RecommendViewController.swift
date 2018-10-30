@@ -14,6 +14,9 @@ private let kNormalItemH = kItemW * 3 / 4
 private let kPrettyItemH = kItemW * 4 / 3
 private let kHeaderViewH : CGFloat = 50 //組頭讓cell看起來來沒有連在一起
 
+private let kCycleViewH = kScreenW * 3 / 8
+
+
 private let kNormalCellID = "kNormalCellID"
 private let kPrettyCellID = "kPrettyCellID"
 private let kHeaderViewID = "kHeaderViewID"
@@ -21,7 +24,14 @@ private let kHeaderViewID = "kHeaderViewID"
 class RecommendViewController: UIViewController {
     
     // MARK:- 懒加载属性
-    private lazy var recommendVM : RecommendViewModel = RecommendViewModel()
+    fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
+    //加到collectionView裡才可以滾動
+    fileprivate var cycleView : RecommendCycleView = {
+        let cycleView = RecommendCycleView.recommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        return cycleView
+    }()
+        
     private lazy var collectionView : UICollectionView = {[unowned self] in
         // 1.创建布局
         let layout = UICollectionViewFlowLayout() //流水布局
@@ -61,59 +71,89 @@ class RecommendViewController: UIViewController {
 
 // MARK:- 设置UI界面内容
 extension RecommendViewController {
+    
     private func setupUI() {
-        // 1.将UICollectionView添加到控制器的View中
+        // 1.將UICollectionView添加到控制器的View中
         view.addSubview(collectionView)
+        
+        // 2.將CycleView添加到控制器的UICollectionView中
+        collectionView.addSubview(cycleView)
+        
+        // 3. 設置collectionView的內邊距 才會讓輪播View直接顯示出來
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
     }
 }
 
 // MARK:- 請求數據
 extension RecommendViewController {
-    private func loadData() {
-        recommendVM.requestData()
-        NetworkTools.requestData(type: .get, URLString: "http://httpbin.org/get", parameters: ["name" : "Any"]) { (result) in
-            print(result)
+    
+    private func loadData() { //24.12.30這裡沒有循迴引用
+        // 1.請求推薦數據
+        recommendVM.requestData{
+            // 1.展示推薦數據
+            self.collectionView.reloadData()
         }
+        
+        // 2.請求無限輪播的數據
+        recommendVM.requestCycleData {
+
+            self.cycleView.cycleModels = self.recommendVM.cycleModels
+        }
+
     }
 }
-
 
 // MARK:- 遵守UICollectionView的数据源协议
 extension RecommendViewController : UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     
     //總共12個群組
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendVM.anchorGroups.count
     }
     
     //每個群組內內有4個item 但第一個群組有8個
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        }
+//        if section == 0 {
+//            return 8
+//        }
+//
+//        return 4
+        let group = recommendVM.anchorGroups[section]
+        return group.anchors.count
         
-        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        // 1.獲得Cell
-        var cell : UICollectionViewCell!
+        // 0.取出模型對象
+        let group = recommendVM.anchorGroups[indexPath.section]
+        let anchor = group.anchors[indexPath.item]
+        
+        // 1.定義Cell
+        var cell : CollectionBaseCell!
         
         // 2.取出Cell
         if indexPath.section == 1 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
+
         } else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
+
         }
+        // 3.將模型賦值給Cell
+        cell.anchor = anchor
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // 1.拿出section的HeaderView
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
         
+        
+        // 2.取出模型
+        headerView.group = recommendVM.anchorGroups[indexPath.section]
+
         return headerView
     }
     
