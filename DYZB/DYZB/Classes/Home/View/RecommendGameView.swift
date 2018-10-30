@@ -9,8 +9,26 @@
 import UIKit
 
 private let kGameCellID = "kGameCellID"
+private let kEdgeInsetMargin : CGFloat = 10
 
 class RecommendGameView: UIView {
+    
+    // MARK:- 定義屬性
+    var groups : [BaseGameModel]? {
+        didSet {
+            
+            // 2.1 刪除前兩組
+            groups?.removeFirst()
+            groups?.removeFirst()
+            // 2.2 添加更多組
+            let moreGroup = AnchorGroup()
+            moreGroup.tag_name = "更多"
+            groups?.append(moreGroup)
+            
+            // 刷新表格
+            collectionView.reloadData()
+        }
+    }
     
     // MARK:- 控件屬性
     @IBOutlet weak var collectionView: UICollectionView!
@@ -25,8 +43,11 @@ class RecommendGameView: UIView {
         autoresizingMask = UIView.AutoresizingMask()
         
         //註冊Cell
-//        collectionView.register(UINib(nibName: "CollectionCycleCell", bundle: nil), forCellWithReuseIdentifier: kCycleCellID)
-                collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kGameCellID)
+        collectionView.register(UINib(nibName: "CollectionGameCell", bundle: nil), forCellWithReuseIdentifier: kGameCellID)
+//                collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kGameCellID)
+        
+        // 给collectionView添加内邊距
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: kEdgeInsetMargin, bottom: 0, right: kEdgeInsetMargin)
         
     }
     
@@ -42,12 +63,15 @@ extension RecommendGameView {
 // MARK:- UICollectionView DataSource
 extension RecommendGameView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return groups?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath)
-        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.blue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath) as! CollectionGameCell
+        
+
+        cell.baseGame = groups![(indexPath as NSIndexPath).item]
+
         return cell
     }
     
