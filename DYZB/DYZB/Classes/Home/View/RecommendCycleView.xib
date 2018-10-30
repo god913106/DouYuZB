@@ -27,10 +27,11 @@
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="iN0-l3-epB" id="p78-SH-jGU"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="8u3-yg-hBv"/>
                     </connections>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="h2y-pG-S11">
-                    <rect key="frame" x="326" y="113" width="39" height="37"/>
+                    <rect key="frame" x="326" y="116" width="39" height="37"/>
                     <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="currentPageIndicatorTintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </pageControl>
@@ -41,7 +42,7 @@
                 <constraint firstAttribute="trailing" secondItem="h2y-pG-S11" secondAttribute="trailing" constant="10" id="Bj7-LQ-yDc"/>
                 <constraint firstItem="JpY-Bu-WfT" firstAttribute="bottom" secondItem="UWf-f7-CXf" secondAttribute="bottom" id="QM0-CZ-Ax0"/>
                 <constraint firstItem="JpY-Bu-WfT" firstAttribute="top" secondItem="UWf-f7-CXf" secondAttribute="top" id="XU1-ap-FFT"/>
-                <constraint firstItem="h2y-pG-S11" firstAttribute="bottom" secondItem="UWf-f7-CXf" secondAttribute="bottom" id="dTW-Ss-XCs"/>
+                <constraint firstItem="h2y-pG-S11" firstAttribute="bottom" secondItem="UWf-f7-CXf" secondAttribute="bottom" constant="3" id="dTW-Ss-XCs"/>
                 <constraint firstItem="UWf-f7-CXf" firstAttribute="trailing" secondItem="JpY-Bu-WfT" secondAttribute="trailing" id="ys7-nK-dLK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -112,7 +112,7 @@ extension RecommendViewModel {
     func requestCycleData(finishCallback : @escaping () -> ()) {
         NetworkTools.requestData(.get, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in
             
-            print(result)
+//            print(result)
             // 1.獲取整體字典數據
             guard let resultDict = result as? [String : NSObject] else { return }
             
