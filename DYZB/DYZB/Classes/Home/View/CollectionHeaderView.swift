@@ -14,6 +14,7 @@ class CollectionHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var moreBtn: UIButton!
     
     
     // MARK:- 定義模型屬性
@@ -22,5 +23,13 @@ class CollectionHeaderView: UICollectionReusableView {
             titleLabel.text = group?.tag_name
             iconImageView.image = UIImage(named: group?.icon_name ?? "home_header_normal")
         }
+    }
+}
+
+
+// MARK:- 從Xib中快速創建的類方法
+extension CollectionHeaderView {
+    class func collectionHeaderView() -> CollectionHeaderView {
+        return Bundle.main.loadNibNamed("CollectionHeaderView", owner: nil, options: nil)?.first as! CollectionHeaderView
     }
 }
