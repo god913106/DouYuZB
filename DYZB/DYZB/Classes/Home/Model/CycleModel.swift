@@ -28,7 +28,7 @@ class CycleModel: NSObject {
     // 主播信息對應的模型對象
     @objc var anchor : AnchorModel?
     
-    // MARK:- 自定义构造函数
+    // MARK:- 自定義構造函數
     init(dict : [String : NSObject]) {
 
         super.init()

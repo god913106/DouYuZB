@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionGameCell" customModule="DYZB" customModuleProvider="target">
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionGameCell" customModule="DYZB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -28,8 +28,8 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6cX-KH-OTS">
                         <rect key="frame" x="17.5" y="14.5" width="45" height="45"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="45" id="7Zt-gI-BDp"/>
-                            <constraint firstAttribute="height" constant="45" id="aeU-Tx-B8b"/>
+                            <constraint firstAttribute="width" constant="45" id="9Rh-pw-PtK"/>
+                            <constraint firstAttribute="height" constant="45" id="t21-O4-JBe"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -38,16 +38,25 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lC2-Cm-zIP">
+                        <rect key="frame" x="0.0" y="90" width="80" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="gKM-cz-eWT"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="6cX-KH-OTS" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="LK9-Se-qvx"/>
-                <constraint firstItem="6cX-KH-OTS" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" constant="-8" id="Z78-Am-61T"/>
-                <constraint firstItem="6cX-KH-OTS" firstAttribute="centerX" secondItem="lmv-lP-20Q" secondAttribute="centerX" id="udU-TQ-qCS"/>
-                <constraint firstItem="lmv-lP-20Q" firstAttribute="top" secondItem="6cX-KH-OTS" secondAttribute="bottom" constant="5" id="xry-nR-wec"/>
+                <constraint firstItem="lmv-lP-20Q" firstAttribute="centerX" secondItem="6cX-KH-OTS" secondAttribute="centerX" id="1iV-37-mbx"/>
+                <constraint firstItem="lmv-lP-20Q" firstAttribute="top" secondItem="6cX-KH-OTS" secondAttribute="bottom" constant="5" id="BaT-g9-cT8"/>
+                <constraint firstAttribute="bottom" secondItem="lC2-Cm-zIP" secondAttribute="bottom" constant="-1" id="E5X-el-dVK"/>
+                <constraint firstItem="lC2-Cm-zIP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MlJ-pu-tdJ"/>
+                <constraint firstItem="6cX-KH-OTS" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-8" id="ig2-mO-iZu"/>
+                <constraint firstAttribute="trailing" secondItem="lC2-Cm-zIP" secondAttribute="trailing" id="pRs-hX-khU"/>
+                <constraint firstItem="6cX-KH-OTS" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="qI2-Qo-H5Z"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <viewLayoutGuide key="safeArea" id="cyJ-CL-DQA"/>
             <connections>
                 <outlet property="iconImageView" destination="6cX-KH-OTS" id="khA-2C-ykl"/>
                 <outlet property="titleLabel" destination="lmv-lP-20Q" id="h0s-Wu-x80"/>
