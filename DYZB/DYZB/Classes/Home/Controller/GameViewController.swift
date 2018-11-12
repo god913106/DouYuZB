@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
     
     // MARK:- 懶加載屬性
     fileprivate lazy var gameVM : GameViewModel = GameViewModel()
+    
     fileprivate lazy var collectionView : UICollectionView = { [unowned self] in
         // 1. 創建布局
         let layout = UICollectionViewFlowLayout()
@@ -43,6 +44,20 @@ class GameViewController: UIViewController {
         return collectionView
     }()
     
+    fileprivate lazy var topHeaderView : CollectionHeaderView = {
+        let headerView = CollectionHeaderView.collectionHeaderView()
+        headerView.frame = CGRect(x: 0, y: -(kHeaderViewH + kGameViewH), width: kScreenW, height: kHeaderViewH)
+        headerView.iconImageView.image = UIImage(named: "Img_orange")
+        headerView.titleLabel.text = "常見"
+        headerView.moreBtn.isHidden = true
+        return headerView
+    }()
+    
+    fileprivate lazy var gameView : RecommendGameView = {
+        let gameView = RecommendGameView.recommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        return gameView
+    }()
 
     // MARK:- 系統回調
     override func viewDidLoad() {
@@ -61,10 +76,13 @@ extension GameViewController {
         view.addSubview(collectionView)
         
         // 2.添加頂部的HeaderView
-
+        collectionView.addSubview(topHeaderView)
         
-        // 3.設置collectionView的內邊距
-       
+        // 3.將常用遊戲的view，添加到collectionView中
+        collectionView.addSubview(gameView)
+        
+        // 設置collectionView的內邊距
+       collectionView.contentInset = UIEdgeInsets(top: kHeaderViewH + kGameViewH, left: 0, bottom: 0, right: 0)
         
 
     }
