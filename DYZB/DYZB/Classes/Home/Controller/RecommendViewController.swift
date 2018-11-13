@@ -107,13 +107,13 @@ extension RecommendViewController {
             // 2.將數據傳遞给GameView
             self.gameView.groups = self.recommendVM.anchorGroups
             
-//            // 2.1 刪除前兩組
-//            self.gameView.groups?.removeFirst()
-//            self.gameView.groups?.removeFirst()
-//            // 2.2 添加更多組
-//            let moreGroup = AnchorGroup()
-//            moreGroup.tag_name = "更多"
-//            self.gameView.groups?.append(moreGroup)
+            // 2.1 刪除前兩組
+            self.gameView.groups?.removeFirst() //熱門
+            self.gameView.groups?.removeFirst() //顏值
+            // 2.2 添加更多組
+            let moreGroup = AnchorGroup()
+            moreGroup.tag_name = "更多"
+            self.gameView.groups?.append(moreGroup)
         }
         
         // 2.請求無限輪播的數據

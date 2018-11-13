@@ -92,7 +92,18 @@ extension GameViewController {
 extension GameViewController {
     fileprivate func loadData() {
         gameVM.loadAllGameData {
+            // 1.展示全部遊戲數據
             self.collectionView.reloadData()
+            
+            // 2.展示常用遊戲 前10筆數據 以下兩種方法都可以
+            // 2.1
+//            var tempArray = [BaseGameModel]()
+//            for i in 0..<10 {
+//                tempArray.append(self.gameVM.games[i])
+//            }
+//            self.gameView.groups = tempArray
+            // 2.2
+            self.gameView.groups = Array(self.gameVM.games[0..<10])
         }
     }
 }

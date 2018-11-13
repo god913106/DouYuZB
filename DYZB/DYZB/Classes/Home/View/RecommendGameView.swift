@@ -16,14 +16,17 @@ class RecommendGameView: UIView {
     // MARK:- 定義屬性
     var groups : [BaseGameModel]? {
         didSet {
+            /*
+             //為了讓底下這這code更好處理 要換到到更通用的位子 讓外界把數據處理好再傳進來
+             // 2.1 刪除前兩組
+             groups?.removeFirst() //熱門
+             groups?.removeFirst() //顏值
+             // 2.2 添加更多組
+             let moreGroup = AnchorGroup()
+             moreGroup.tag_name = "更多"
+             groups?.append(moreGroup)
+             */
             
-            // 2.1 刪除前兩組
-            groups?.removeFirst()
-            groups?.removeFirst()
-            // 2.2 添加更多組
-            let moreGroup = AnchorGroup()
-            moreGroup.tag_name = "更多"
-            groups?.append(moreGroup)
             
             // 刷新表格
             collectionView.reloadData()
