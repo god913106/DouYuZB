@@ -40,8 +40,8 @@ class RecommendViewController: UIViewController {
         return gameView
     }()
  
-    private lazy var collectionView : UICollectionView = {[unowned self] in
-        // 1.创建布局
+    fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
+        // 1.創建布局
         let layout = UICollectionViewFlowLayout() //流水布局
         layout.itemSize = CGSize(width: kItemW, height: kNormalItemH)
         layout.minimumLineSpacing = 0
@@ -49,7 +49,7 @@ class RecommendViewController: UIViewController {
         layout.headerReferenceSize = CGSize(width: kScreenW, height: kHeaderViewH)
         layout.sectionInset = UIEdgeInsets(top: 0, left: kItemMargin, bottom: 0, right: kItemMargin) //設定間距 這這樣才才會左中右三個10
         
-        // 2.创建UICollectionView
+        // 2.創建UICollectionView
         
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.white
@@ -63,11 +63,11 @@ class RecommendViewController: UIViewController {
         return collectionView
         }()
     
-    // MARK:- 系统回调函数
+    // MARK:- 系統回調
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 设置UI界面
+        // 設置UI界面
         setupUI()
         
         //發送網路請求
@@ -77,7 +77,7 @@ class RecommendViewController: UIViewController {
 }
 
 
-// MARK:- 设置UI界面内容
+// MARK:- 設置UI界面内容
 extension RecommendViewController {
     
     private func setupUI() {
@@ -125,7 +125,7 @@ extension RecommendViewController {
     }
 }
 
-// MARK:- 遵守UICollectionView的数据源协议
+// MARK:- 遵守UICollectionView的數據源協議
 extension RecommendViewController : UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     
     //總共12個群組
