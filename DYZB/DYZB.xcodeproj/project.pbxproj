@@ -51,6 +51,8 @@
 		42D0A83221675674008DC02D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42D0A83021675674008DC02D /* Profile.storyboard */; };
 		42DA07052187232A00C282AA /* CollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DA07032187232A00C282AA /* CollectionCycleCell.swift */; };
 		42DA07062187232A00C282AA /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DA07042187232A00C282AA /* CollectionCycleCell.xib */; };
+		42E78981219C192F0076278F /* AmuseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E78980219C192F0076278F /* AmuseMenuView.swift */; };
+		42E78983219C19450076278F /* AmuseMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E78982219C19450076278F /* AmuseMenuView.xib */; };
 		42F6C596216CA99C0002B0E9 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6C595216CA99C0002B0E9 /* UIColor-Extension.swift */; };
 		BCBCC1CCC5A2A2AA91B90B77 /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1165720147EFEAC83B3CFE7C /* Pods_DYZB.framework */; };
 /* End PBXBuildFile section */
@@ -104,6 +106,8 @@
 		42D0A83121675674008DC02D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		42DA07032187232A00C282AA /* CollectionCycleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCycleCell.swift; sourceTree = "<group>"; };
 		42DA07042187232A00C282AA /* CollectionCycleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
+		42E78980219C192F0076278F /* AmuseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseMenuView.swift; sourceTree = "<group>"; };
+		42E78982219C19450076278F /* AmuseMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmuseMenuView.xib; sourceTree = "<group>"; };
 		42F6C595216CA99C0002B0E9 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		F0409D6E635D422B540EC64D /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +149,8 @@
 				4244DAB6218860BC00C1C5F2 /* RecommendGameView.xib */,
 				4244DAB821886F4100C1C5F2 /* CollectionGameCell.swift */,
 				4244DAB921886F4100C1C5F2 /* CollectionGameCell.xib */,
+				42E78980219C192F0076278F /* AmuseMenuView.swift */,
+				42E78982219C19450076278F /* AmuseMenuView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 				42D0A82C21675623008DC02D /* Live.storyboard in Resources */,
 				42D0A829216755DA008DC02D /* Home.storyboard in Resources */,
 				4244DABB21886F4100C1C5F2 /* CollectionGameCell.xib in Resources */,
+				42E78983219C19450076278F /* AmuseMenuView.xib in Resources */,
 				424BEC3F218305EC001DF373 /* RecommendCycleView.xib in Resources */,
 				42DA07062187232A00C282AA /* CollectionCycleCell.xib in Resources */,
 				428C16EC21749F1800725129 /* CollectionPrettyCell.xib in Resources */,
@@ -504,6 +511,7 @@
 				4246B7EC217883F70038AC88 /* BaseGameModel.swift in Sources */,
 				428C16E72174984200725129 /* CollectionNormalCell.swift in Sources */,
 				4244DAB5218860AA00C1C5F2 /* RecommendGameView.swift in Sources */,
+				42E78981219C192F0076278F /* AmuseMenuView.swift in Sources */,
 				4246B7EE2178878C0038AC88 /* BaseViewModel.swift in Sources */,
 				423EED9A2175E7E6009712EF /* NetworkTools.swift in Sources */,
 				42341459216769C900697623 /* HomeViewController.swift in Sources */,

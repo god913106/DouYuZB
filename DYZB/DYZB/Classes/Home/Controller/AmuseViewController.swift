@@ -8,16 +8,35 @@
 
 import UIKit
 
-
+private let kMenuViewH : CGFloat = 200
 
 class AmuseViewController: BaseAnchorViewController {
 
     // MARK:- 懶加載屬性
     fileprivate lazy var amuseVM : AmuseViewModel = AmuseViewModel()
-
+    fileprivate lazy var menuView : AmuseMenuView = {
+        
+        let menuView = AmuseMenuView.amuseMenuView()
+        
+        menuView.frame = CGRect(x: 0, y: -kMenuViewH, width: kScreenW, height: kMenuViewH)
+        menuView.backgroundColor = UIColor.purple
+        return menuView
+    }()
 }
 
-
+// MARK:- 設置UI介面
+extension AmuseViewController {
+    override func setupUI() {
+        super.setupUI()
+        
+        //將菜單的View添加到控制器的collectionView中
+        collectionView.addSubview(menuView)
+        
+        // 設置collectionView的內邊距
+        collectionView.contentInset = UIEdgeInsets(top: kMenuViewH, left: 0, bottom: 0, right: 0)
+        
+    }
+}
 
 // MARK:- 請求數據後展示
 extension AmuseViewController {
