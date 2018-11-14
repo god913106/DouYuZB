@@ -53,6 +53,8 @@
 		42DA07062187232A00C282AA /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DA07042187232A00C282AA /* CollectionCycleCell.xib */; };
 		42E78981219C192F0076278F /* AmuseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E78980219C192F0076278F /* AmuseMenuView.swift */; };
 		42E78983219C19450076278F /* AmuseMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E78982219C19450076278F /* AmuseMenuView.xib */; };
+		42E78986219C37DA0076278F /* AmuseMenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E78984219C37DA0076278F /* AmuseMenuViewCell.swift */; };
+		42E78987219C37DA0076278F /* AmuseMenuViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E78985219C37DA0076278F /* AmuseMenuViewCell.xib */; };
 		42F6C596216CA99C0002B0E9 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F6C595216CA99C0002B0E9 /* UIColor-Extension.swift */; };
 		BCBCC1CCC5A2A2AA91B90B77 /* Pods_DYZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1165720147EFEAC83B3CFE7C /* Pods_DYZB.framework */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,8 @@
 		42DA07042187232A00C282AA /* CollectionCycleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
 		42E78980219C192F0076278F /* AmuseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseMenuView.swift; sourceTree = "<group>"; };
 		42E78982219C19450076278F /* AmuseMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmuseMenuView.xib; sourceTree = "<group>"; };
+		42E78984219C37DA0076278F /* AmuseMenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseMenuViewCell.swift; sourceTree = "<group>"; };
+		42E78985219C37DA0076278F /* AmuseMenuViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AmuseMenuViewCell.xib; sourceTree = "<group>"; };
 		42F6C595216CA99C0002B0E9 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		F0409D6E635D422B540EC64D /* Pods-DYZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +155,8 @@
 				4244DAB921886F4100C1C5F2 /* CollectionGameCell.xib */,
 				42E78980219C192F0076278F /* AmuseMenuView.swift */,
 				42E78982219C19450076278F /* AmuseMenuView.xib */,
+				42E78984219C37DA0076278F /* AmuseMenuViewCell.swift */,
+				42E78985219C37DA0076278F /* AmuseMenuViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -404,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42D0A81321662BD2008DC02D /* LaunchScreen.storyboard in Resources */,
+				42E78987219C37DA0076278F /* AmuseMenuViewCell.xib in Resources */,
 				428C16E221748E4100725129 /* CollectionHeaderView.xib in Resources */,
 				428C16E82174984200725129 /* CollectionNormalCell.xib in Resources */,
 				42D0A81021662BD2008DC02D /* Assets.xcassets in Resources */,
@@ -496,6 +503,7 @@
 				423EEDA12175FE85009712EF /* AnchorGroup.swift in Sources */,
 				424BEC3D21830595001DF373 /* RecommendCycleView.swift in Sources */,
 				4234145121675CE100697623 /* MainViewController.swift in Sources */,
+				42E78986219C37DA0076278F /* AmuseMenuViewCell.swift in Sources */,
 				4259DBF9216B4F4A0017C242 /* PageTitleView.swift in Sources */,
 				4270D43A21996FEF00AB6313 /* GameViewModel.swift in Sources */,
 				4259DBFD216B716C0017C242 /* PageContentView.swift in Sources */,
