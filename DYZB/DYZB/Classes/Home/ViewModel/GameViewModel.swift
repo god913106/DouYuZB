@@ -9,7 +9,7 @@
 import UIKit
 
 class GameViewModel {
-   @objc lazy var games : [GameModel] = [GameModel]()
+    lazy var games : [GameModel] = [GameModel]()
 }
 
 extension GameViewModel {

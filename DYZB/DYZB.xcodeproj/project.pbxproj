@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		42080733219ACBF400ADDAA4 /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42080732219ACBF400ADDAA4 /* AmuseViewController.swift */; };
+		42080735219AD58C00ADDAA4 /* AmuseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42080734219AD58C00ADDAA4 /* AmuseViewModel.swift */; };
+		42080737219AE51800ADDAA4 /* BaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42080736219AE51800ADDAA4 /* BaseAnchorViewController.swift */; };
 		420E949521958B19005501CA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420E949421958B19005501CA /* GameViewController.swift */; };
 		4234145121675CE100697623 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234145021675CE100697623 /* MainViewController.swift */; };
 		42341459216769C900697623 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42341458216769C900697623 /* HomeViewController.swift */; };
@@ -57,6 +59,8 @@
 		1165720147EFEAC83B3CFE7C /* Pods_DYZB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DYZB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		200B7DF52225801DE6AF405A /* Pods-DYZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYZB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYZB/Pods-DYZB.debug.xcconfig"; sourceTree = "<group>"; };
 		42080732219ACBF400ADDAA4 /* AmuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
+		42080734219AD58C00ADDAA4 /* AmuseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmuseViewModel.swift; sourceTree = "<group>"; };
+		42080736219AE51800ADDAA4 /* BaseAnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnchorViewController.swift; sourceTree = "<group>"; };
 		420E949421958B19005501CA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4234145021675CE100697623 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		42341458216769C900697623 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			children = (
 				42D0A80C21662BD1008DC02D /* Main.storyboard */,
 				4234145021675CE100697623 /* MainViewController.swift */,
+				42080736219AE51800ADDAA4 /* BaseAnchorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			children = (
 				423EED9C2175F121009712EF /* RecommendViewModel.swift */,
 				4270D43921996FEF00AB6313 /* GameViewModel.swift */,
+				42080734219AD58C00ADDAA4 /* AmuseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 				4251B1E421709DE700E83E71 /* RecommendViewController.swift in Sources */,
 				420E949521958B19005501CA /* GameViewController.swift in Sources */,
 				4270D43C219973A800AB6313 /* GameModel.swift in Sources */,
+				42080737219AE51800ADDAA4 /* BaseAnchorViewController.swift in Sources */,
 				423EEDA12175FE85009712EF /* AnchorGroup.swift in Sources */,
 				424BEC3D21830595001DF373 /* RecommendCycleView.swift in Sources */,
 				4234145121675CE100697623 /* MainViewController.swift in Sources */,
@@ -489,6 +496,7 @@
 				4234145C2167730800697623 /* UIBarButtonItem-Extension.swift in Sources */,
 				4259DBFB216B58070017C242 /* Common.swift in Sources */,
 				429DD47B2181D2A800257686 /* CollectionBaseCell.swift in Sources */,
+				42080735219AD58C00ADDAA4 /* AmuseViewModel.swift in Sources */,
 				428C16EB21749F1800725129 /* CollectionPrettyCell.swift in Sources */,
 				4244DABA21886F4100C1C5F2 /* CollectionGameCell.swift in Sources */,
 				423EED9F2175F44E009712EF /* Date-Extension.swift in Sources */,
