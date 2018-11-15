@@ -19,7 +19,7 @@ class AmuseViewController: BaseAnchorViewController {
         let menuView = AmuseMenuView.amuseMenuView()
         
         menuView.frame = CGRect(x: 0, y: -kMenuViewH, width: kScreenW, height: kMenuViewH)
-        menuView.backgroundColor = UIColor.purple
+//        menuView.backgroundColor = UIColor.purple
         return menuView
     }()
 }
@@ -46,9 +46,17 @@ extension AmuseViewController {
         baseVM = amuseVM
         
         // 2.請求數據
-        amuseVM.loadAllAmuseData {
+        amuseVM.loadAmuseData {
             // 1.展示全部遊戲數據
             self.collectionView.reloadData()
+            
+//            // 2.2.调整数据
+            var tempGroups = self.amuseVM.anchorGroups
+            tempGroups.removeFirst()  //刪除最熱
+            self.menuView.groups = tempGroups
+//            
+//            // 3.数据请求完成
+//            self.loadDataFinished()
             
         }
     }

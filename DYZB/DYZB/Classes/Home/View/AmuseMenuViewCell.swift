@@ -12,8 +12,13 @@ private let kGameCellID = "kGameCellID"
 
 class AmuseMenuViewCell: UICollectionViewCell {
     
-    // MARK: 數组模型
-    
+    // MARK: 數组模型 定義屬性
+   var groups : [AnchorGroup]?
+    {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     // MARK: 控件屬性
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,18 +27,16 @@ class AmuseMenuViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-         collectionView.register(UINib(nibName: "CollectionGameCell", bundle: nil), forCellWithReuseIdentifier: kGameCellID)
+        collectionView.register(UINib(nibName: "CollectionGameCell", bundle: nil), forCellWithReuseIdentifier: kGameCellID)
         
     }
-
+    
     /*
      讓八個原本小到到靠北的cell 應該是每一行行放四個
-     
-
      */
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let itemW = collectionView.bounds.width / 4
         let itemH = collectionView.bounds.height / 2
@@ -52,13 +55,19 @@ class AmuseMenuViewCell: UICollectionViewCell {
  */
 extension AmuseMenuViewCell : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+//                return 8
+        return groups?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // 1.求出Cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID , for: indexPath) as! CollectionGameCell
         
-        cell.backgroundColor = UIColor.randomColor()
+        // 2.給Cell設置數據
+//                cell.backgroundColor = UIColor.randomColor()
+        cell.baseGame = groups![indexPath.item]
+        cell.clipsToBounds = true //刪掉底線
         
         return cell
     }

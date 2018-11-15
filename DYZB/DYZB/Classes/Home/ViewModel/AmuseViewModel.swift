@@ -14,9 +14,9 @@ class AmuseViewModel : BaseViewModel {
 
 extension AmuseViewModel {
     //之後請求的數據給返回
-    func loadAllAmuseData(finishedCallback : @escaping () -> ()) {
+    func loadAmuseData(finishedCallback : @escaping () -> ()) {
         
-        loadAnchorData(isGroupData: true, URLString: "http://capi.douyucdn.cn/api/v1/getHotRoom/2", finishedCallback: finishedCallback)
+        loadAnchorData(URLString: "http://capi.douyucdn.cn/api/v1/getHotRoom/2", finishedCallback: finishedCallback)
         
 //        NetworkTools.requestData(.get, URLString: "http://capi.douyucdn.cn/api/v1/getHotRoom/2") { (result) in
 //

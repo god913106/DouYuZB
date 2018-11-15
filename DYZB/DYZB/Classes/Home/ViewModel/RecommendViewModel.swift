@@ -92,7 +92,7 @@ extension RecommendViewModel {
         // 5.請求後面部份遊戲數據
         dGroup.enter()
         // http://capi.douyucdn.cn/api/v1/getHotCate?limit=4&offset=0&time=1540281147
-        loadAnchorData(isGroupData: true, URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) {
+        loadAnchorData(URLString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) {
             dGroup.leave()
         }
         

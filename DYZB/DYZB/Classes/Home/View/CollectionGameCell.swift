@@ -16,7 +16,7 @@ class CollectionGameCell: UICollectionViewCell {
     
     
     // MARK: 定義模型屬性
-    var baseGame : BaseGameModel? {
+    @objc var baseGame : BaseGameModel? {
         didSet {
             titleLabel.text = baseGame?.tag_name
             
