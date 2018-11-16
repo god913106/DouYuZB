@@ -28,6 +28,7 @@
 		424BEC3D21830595001DF373 /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424BEC3C21830595001DF373 /* RecommendCycleView.swift */; };
 		424BEC3F218305EC001DF373 /* RecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424BEC3E218305EC001DF373 /* RecommendCycleView.xib */; };
 		424BEC41218325AE001DF373 /* CycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424BEC40218325AE001DF373 /* CycleModel.swift */; };
+		424E1077219EAA5C00497EF8 /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424E1076219EAA5C00497EF8 /* FunnyViewController.swift */; };
 		4251B1E421709DE700E83E71 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251B1E321709DE700E83E71 /* RecommendViewController.swift */; };
 		4259DBF9216B4F4A0017C242 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259DBF8216B4F4A0017C242 /* PageTitleView.swift */; };
 		4259DBFB216B58070017C242 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259DBFA216B58070017C242 /* Common.swift */; };
@@ -83,6 +84,7 @@
 		424BEC3C21830595001DF373 /* RecommendCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
 		424BEC3E218305EC001DF373 /* RecommendCycleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendCycleView.xib; sourceTree = "<group>"; };
 		424BEC40218325AE001DF373 /* CycleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleModel.swift; sourceTree = "<group>"; };
+		424E1076219EAA5C00497EF8 /* FunnyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
 		4251B1E321709DE700E83E71 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		4259DBF8216B4F4A0017C242 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		4259DBFA216B58070017C242 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				4251B1E321709DE700E83E71 /* RecommendViewController.swift */,
 				420E949421958B19005501CA /* GameViewController.swift */,
 				42080732219ACBF400ADDAA4 /* AmuseViewController.swift */,
+				424E1076219EAA5C00497EF8 /* FunnyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				424BEC3D21830595001DF373 /* RecommendCycleView.swift in Sources */,
 				4234145121675CE100697623 /* MainViewController.swift in Sources */,
 				42E78986219C37DA0076278F /* AmuseMenuViewCell.swift in Sources */,
+				424E1077219EAA5C00497EF8 /* FunnyViewController.swift in Sources */,
 				4259DBF9216B4F4A0017C242 /* PageTitleView.swift in Sources */,
 				4270D43A21996FEF00AB6313 /* GameViewModel.swift in Sources */,
 				4259DBFD216B716C0017C242 /* PageContentView.swift in Sources */,

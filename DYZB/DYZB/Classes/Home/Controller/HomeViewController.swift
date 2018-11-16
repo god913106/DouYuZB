@@ -29,14 +29,15 @@ class HomeViewController: UIViewController {
         
         // 2.確定所有的子控制器
         var childVcs = [UIViewController]()
-        childVcs.append(RecommendViewController())
-        childVcs.append(GameViewController())
-        childVcs.append(AmuseViewController())
-        for _ in 0..<1 {
-            let vc = UIViewController()
-            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
-            childVcs.append(vc)
-        }
+        childVcs.append(RecommendViewController())  //推薦
+        childVcs.append(GameViewController())   //遊戲
+        childVcs.append(AmuseViewController())  //娛樂
+        childVcs.append(FunnyViewController())  //趣玩
+//        for _ in 0..<1 {
+//            let vc = UIViewController()
+//            vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+//            childVcs.append(vc)
+//        }
         
         let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
         contentView.delegate = self //這樣contentView滑動時 就會通知給pageTitleView
