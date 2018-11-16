@@ -11,7 +11,7 @@ import UIKit
 
 class AnchorGroup: BaseGameModel {
     /// 該組中對應的房間信息
-   @objc var room_list : [[String : NSObject]]? {
+   @objc var room_list : [[String : Any]]? {
         didSet {
             guard let room_list = room_list else { return }
             for dict in room_list {

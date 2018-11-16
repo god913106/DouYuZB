@@ -47,15 +47,15 @@ extension AmuseViewController {
         
         // 2.請求數據
         amuseVM.loadAmuseData {
-            // 1.展示全部遊戲數據
+            // 1.刷新表格
             self.collectionView.reloadData()
             
-//            // 2.2.调整数据
+//            // 2.2.調整數據
             var tempGroups = self.amuseVM.anchorGroups
             tempGroups.removeFirst()  //刪除最熱
             self.menuView.groups = tempGroups
 //            
-//            // 3.数据请求完成
+            // 3.數據請求完成
 //            self.loadDataFinished()
             
         }

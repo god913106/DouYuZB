@@ -78,11 +78,8 @@ extension BaseAnchorViewController : UICollectionViewDataSource , UICollectionVi
     // 8個群組
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
-        if baseVM == nil {
-            return 1
-        }else {
             return baseVM.anchorGroups.count
-        }
+        
         //        return 8
         
     }
@@ -90,12 +87,8 @@ extension BaseAnchorViewController : UICollectionViewDataSource , UICollectionVi
     // 群組裡有4個item
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //        return 4
-        if baseVM == nil {
-            return 20
-        }else {
-            return baseVM.anchorGroups[section].anchors.count
-        }
         
+            return baseVM.anchorGroups[section].anchors.count
     }
     
     // 反回cell
@@ -103,14 +96,11 @@ extension BaseAnchorViewController : UICollectionViewDataSource , UICollectionVi
         // 1.取出cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
         
-        if baseVM == nil {
+        
+            // 2.給cell設置數據
+            cell.anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
+            
             return cell
-        }
-        
-        // 2.給cell設置數據
-        cell.anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
-        
-        return cell
     }
     
     // headerView
@@ -118,15 +108,10 @@ extension BaseAnchorViewController : UICollectionViewDataSource , UICollectionVi
         // 1.取出HeaderView
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
         
-        if baseVM == nil {
+            // 2.给HeaderView設置數據
+            headerView.group = baseVM.anchorGroups[indexPath.section]
+            
             return headerView
-        }
-        
-        // 2.给HeaderView設置數據
-        headerView.group = baseVM.anchorGroups[indexPath.section]
-        
-        return headerView
-        
     }
 }
 

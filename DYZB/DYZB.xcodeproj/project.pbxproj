@@ -29,6 +29,7 @@
 		424BEC3F218305EC001DF373 /* RecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424BEC3E218305EC001DF373 /* RecommendCycleView.xib */; };
 		424BEC41218325AE001DF373 /* CycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424BEC40218325AE001DF373 /* CycleModel.swift */; };
 		424E1077219EAA5C00497EF8 /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424E1076219EAA5C00497EF8 /* FunnyViewController.swift */; };
+		424E1079219EBAA400497EF8 /* FunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424E1078219EBAA400497EF8 /* FunnyViewModel.swift */; };
 		4251B1E421709DE700E83E71 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251B1E321709DE700E83E71 /* RecommendViewController.swift */; };
 		4259DBF9216B4F4A0017C242 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259DBF8216B4F4A0017C242 /* PageTitleView.swift */; };
 		4259DBFB216B58070017C242 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259DBFA216B58070017C242 /* Common.swift */; };
@@ -85,6 +86,7 @@
 		424BEC3E218305EC001DF373 /* RecommendCycleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendCycleView.xib; sourceTree = "<group>"; };
 		424BEC40218325AE001DF373 /* CycleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleModel.swift; sourceTree = "<group>"; };
 		424E1076219EAA5C00497EF8 /* FunnyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
+		424E1078219EBAA400497EF8 /* FunnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewModel.swift; sourceTree = "<group>"; };
 		4251B1E321709DE700E83E71 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		4259DBF8216B4F4A0017C242 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		4259DBFA216B58070017C242 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				423EED9C2175F121009712EF /* RecommendViewModel.swift */,
 				4270D43921996FEF00AB6313 /* GameViewModel.swift */,
 				42080734219AD58C00ADDAA4 /* AmuseViewModel.swift */,
+				424E1078219EBAA400497EF8 /* FunnyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				4259DBFD216B716C0017C242 /* PageContentView.swift in Sources */,
 				42080733219ACBF400ADDAA4 /* AmuseViewController.swift in Sources */,
 				4234145C2167730800697623 /* UIBarButtonItem-Extension.swift in Sources */,
+				424E1079219EBAA400497EF8 /* FunnyViewModel.swift in Sources */,
 				4259DBFB216B58070017C242 /* Common.swift in Sources */,
 				429DD47B2181D2A800257686 /* CollectionBaseCell.swift in Sources */,
 				42080735219AD58C00ADDAA4 /* AmuseViewModel.swift in Sources */,
