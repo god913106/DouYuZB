@@ -16,6 +16,7 @@
 		4234145C2167730800697623 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234145B2167730800697623 /* UIBarButtonItem-Extension.swift */; };
 		4238732321A2C559003B8F85 /* RoomShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238732221A2C559003B8F85 /* RoomShowViewController.swift */; };
 		4238732521A2C56E003B8F85 /* RoomNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238732421A2C56E003B8F85 /* RoomNormalViewController.swift */; };
+		4238732721A2D78A003B8F85 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238732621A2D78A003B8F85 /* CustomNavigationController.swift */; };
 		423EED9A2175E7E6009712EF /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423EED992175E7E6009712EF /* NetworkTools.swift */; };
 		423EED9D2175F121009712EF /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423EED9C2175F121009712EF /* RecommendViewModel.swift */; };
 		423EED9F2175F44E009712EF /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423EED9E2175F44E009712EF /* Date-Extension.swift */; };
@@ -76,6 +77,7 @@
 		4234145B2167730800697623 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		4238732221A2C559003B8F85 /* RoomShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomShowViewController.swift; sourceTree = "<group>"; };
 		4238732421A2C56E003B8F85 /* RoomNormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomNormalViewController.swift; sourceTree = "<group>"; };
+		4238732621A2D78A003B8F85 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		423EED992175E7E6009712EF /* NetworkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		423EED9C2175F121009712EF /* RecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		423EED9E2175F44E009712EF /* Date-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				4234145021675CE100697623 /* MainViewController.swift */,
 				424E107A219ED45A00497EF8 /* BaseViewController.swift */,
 				42080736219AE51800ADDAA4 /* BaseAnchorViewController.swift */,
+				4238732621A2D78A003B8F85 /* CustomNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				424BEC3D21830595001DF373 /* RecommendCycleView.swift in Sources */,
 				4234145121675CE100697623 /* MainViewController.swift in Sources */,
 				42E78986219C37DA0076278F /* AmuseMenuViewCell.swift in Sources */,
+				4238732721A2D78A003B8F85 /* CustomNavigationController.swift in Sources */,
 				4238732521A2C56E003B8F85 /* RoomNormalViewController.swift in Sources */,
 				424E1077219EAA5C00497EF8 /* FunnyViewController.swift in Sources */,
 				4259DBF9216B4F4A0017C242 /* PageTitleView.swift in Sources */,

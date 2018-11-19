@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoomNormalViewController: UIViewController {
+class RoomNormalViewController: UIViewController , UIGestureRecognizerDelegate {
 
     // MARK:- 系統回調
     override func viewDidLoad() {
@@ -17,7 +17,24 @@ class RoomNormalViewController: UIViewController {
         view.backgroundColor = UIColor.orange
     }
     
-
-   
+    // MARK:- 系統畫面將出現
+    override func viewWillAppear(_ animated: Bool) {
+        //隱藏navigationBar
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        //因為隱藏導覽列後 就不可以pop手勢返回上一頁
+        //依然保持手勢
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
+        
+    }
+    
+    // MARK:- 系統畫面將離開
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //顯示navigationBar
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
 }
