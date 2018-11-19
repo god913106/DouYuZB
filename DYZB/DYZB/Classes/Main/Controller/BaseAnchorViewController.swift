@@ -79,12 +79,12 @@ extension BaseAnchorViewController {
 
 
 // MARK:- 遵守UICollectionView的數據源協議
-extension BaseAnchorViewController : UICollectionViewDataSource , UICollectionViewDelegate {
+extension BaseAnchorViewController : UICollectionViewDataSource{
     
     // 8個群組
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
-            return baseVM.anchorGroups.count
+        return baseVM.anchorGroups.count
         
         //        return 8
         
@@ -94,7 +94,7 @@ extension BaseAnchorViewController : UICollectionViewDataSource , UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //        return 4
         
-            return baseVM.anchorGroups[section].anchors.count
+        return baseVM.anchorGroups[section].anchors.count
     }
     
     // 反回cell
@@ -103,10 +103,10 @@ extension BaseAnchorViewController : UICollectionViewDataSource , UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! CollectionNormalCell
         
         
-            // 2.給cell設置數據
-            cell.anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
-            
-            return cell
+        // 2.給cell設置數據
+        cell.anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
+        
+        return cell
     }
     
     // headerView
@@ -114,37 +114,48 @@ extension BaseAnchorViewController : UICollectionViewDataSource , UICollectionVi
         // 1.取出HeaderView
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
         
-            // 2.给HeaderView設置數據
-            headerView.group = baseVM.anchorGroups[indexPath.section]
-            
-            return headerView
+        // 2.给HeaderView設置數據
+        headerView.group = baseVM.anchorGroups[indexPath.section]
+        
+        return headerView
     }
 }
 
 // MARK:- 遵守UICollectionView的代理協議
-//extension BaseAnchorViewController : UICollectionViewDelegate {
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        // 1.取出对应的主播信息
-//        let anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
-//
-//        // 2.判断是秀场房间&普通房间
-//        anchor.isVertical == 0 ? pushNormalRoomVc() : presentShowRoomVc()
-//    }
-//
-//    private func presentShowRoomVc() {
-//        // 1.创建ShowRoomVc
-//        let showRoomVc = RoomShowViewController()
-//
-//        // 2.以Modal方式弹出
-//        present(showRoomVc, animated: true, completion: nil)
-//    }
-//
-//    private func pushNormalRoomVc() {
-//        // 1.创建NormalRoomVc
-//        let normalRoomVc = RoomNormalViewController()
-//        
-//        // 2.以Push方式弹出
-//        navigationController?.pushViewController(normalRoomVc, animated: true)
-//    }
-//}
+extension BaseAnchorViewController : UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // 1.取出對應的主播信息
+        let anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
+        
+        // 2.判斷是秀場房間還是普通房間
+        //  anchor.isVertical == 0 ? 普通房間 : 秀場房間
+        anchor.isVertical == 0 ? pushNormalRoomVc() : presentShowRoomVc()
+        
+    }
+    
+    //秀場房間
+    private func presentShowRoomVc(){
+        
+        // 1.創建建showRoomVc
+        let showRoomVc = RoomShowViewController()
+        
+        // 2.以Model方式彈出
+        present(showRoomVc, animated: true, completion: nil)
+    }
+    
+    //普通房間
+    private func pushNormalRoomVc() {
+        
+        // 1.創建建normalRoomVc
+        let normalRoomVc = RoomNormalViewController()
+        
+        // 2.以push方式彈出 後應該隱藏導覽例和tabBar
+        navigationController?.pushViewController(normalRoomVc, animated: true)
+    }
+    
+    
+    
+    
+}

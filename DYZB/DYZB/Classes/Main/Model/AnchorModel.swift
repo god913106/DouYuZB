@@ -15,7 +15,7 @@ class AnchorModel: NSObject {
     /// 房間圖片對應的URLString
     @objc var vertical_src : String = ""
     /// 判斷是手機直播還是電腦直播
-    // 0 : 電腦直播(普通房間) 1 : 手機直播(秀場房間)
+    // 0 : 電腦直播(普通房間RoomNormal) 1 : 手機直播(秀場房間RoomShow)
     @objc var isVertical : Int = 0
     /// 房間名稱
     @objc var room_name : String = ""
