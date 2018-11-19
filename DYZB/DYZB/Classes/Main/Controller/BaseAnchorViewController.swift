@@ -20,7 +20,7 @@ let kNormalItemH = kNormalItemW * 3 / 4
 let kPrettyItemH = kNormalItemW * 4 / 3
 let kPrettyCellID = "kPrettyCellID"
 
-class BaseAnchorViewController: UIViewController {
+class BaseAnchorViewController: BaseViewController {
     
     // MARK:-定義屬性
     var baseVM : BaseViewModel!
@@ -58,9 +58,15 @@ class BaseAnchorViewController: UIViewController {
 
 // MARK:- 設置UI介面
 extension BaseAnchorViewController {
-    @objc func setupUI() {
+    override func setupUI() {
+        // 0.調用super.setupUI之前，給父類中內容View的引用進行賦值
+        contentView = collectionView
+        
         // 1.添加UICollectionView
         view.addSubview(collectionView)
+        
+        // 2.調用super.setupUI()
+        super.setupUI()
     }
 }
 

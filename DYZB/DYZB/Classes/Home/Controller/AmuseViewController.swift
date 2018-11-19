@@ -50,13 +50,13 @@ extension AmuseViewController {
             // 1.刷新表格
             self.collectionView.reloadData()
             
-//            // 2.2.調整數據
+            // 2.2.調整數據
             var tempGroups = self.amuseVM.anchorGroups
             tempGroups.removeFirst()  //刪除最熱
             self.menuView.groups = tempGroups
-//            
+            
             // 3.數據請求完成
-//            self.loadDataFinished()
+            self.loadDataFinished()
             
         }
     }

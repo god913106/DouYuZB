@@ -124,6 +124,9 @@ extension RecommendViewController {
             groups.append(moreGroup)
             
             self.gameView.groups = groups
+            
+            // 3.數據請求完成
+            self.loadDataFinished() //load動畫關閉 顯示數據(baseViewController)
         }
         
         // 2.請求無限輪播的數據

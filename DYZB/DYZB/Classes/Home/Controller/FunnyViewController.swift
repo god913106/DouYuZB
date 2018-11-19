@@ -49,7 +49,7 @@ extension FunnyViewController {
             self.collectionView.reloadData()
             
             // 2-2.數據請求完成
-//            self.loadDataFinished()
+            self.loadDataFinished()
         }
         
     }

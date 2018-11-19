@@ -30,6 +30,7 @@
 		424BEC41218325AE001DF373 /* CycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424BEC40218325AE001DF373 /* CycleModel.swift */; };
 		424E1077219EAA5C00497EF8 /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424E1076219EAA5C00497EF8 /* FunnyViewController.swift */; };
 		424E1079219EBAA400497EF8 /* FunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424E1078219EBAA400497EF8 /* FunnyViewModel.swift */; };
+		424E107B219ED45A00497EF8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424E107A219ED45A00497EF8 /* BaseViewController.swift */; };
 		4251B1E421709DE700E83E71 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4251B1E321709DE700E83E71 /* RecommendViewController.swift */; };
 		4259DBF9216B4F4A0017C242 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259DBF8216B4F4A0017C242 /* PageTitleView.swift */; };
 		4259DBFB216B58070017C242 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4259DBFA216B58070017C242 /* Common.swift */; };
@@ -87,6 +88,7 @@
 		424BEC40218325AE001DF373 /* CycleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleModel.swift; sourceTree = "<group>"; };
 		424E1076219EAA5C00497EF8 /* FunnyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
 		424E1078219EBAA400497EF8 /* FunnyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyViewModel.swift; sourceTree = "<group>"; };
+		424E107A219ED45A00497EF8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4251B1E321709DE700E83E71 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		4259DBF8216B4F4A0017C242 /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		4259DBFA216B58070017C242 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				42D0A80C21662BD1008DC02D /* Main.storyboard */,
 				4234145021675CE100697623 /* MainViewController.swift */,
+				424E107A219ED45A00497EF8 /* BaseViewController.swift */,
 				42080736219AE51800ADDAA4 /* BaseAnchorViewController.swift */,
 			);
 			path = Controller;
@@ -504,6 +507,7 @@
 				42F6C596216CA99C0002B0E9 /* UIColor-Extension.swift in Sources */,
 				4251B1E421709DE700E83E71 /* RecommendViewController.swift in Sources */,
 				420E949521958B19005501CA /* GameViewController.swift in Sources */,
+				424E107B219ED45A00497EF8 /* BaseViewController.swift in Sources */,
 				4270D43C219973A800AB6313 /* GameModel.swift in Sources */,
 				42080737219AE51800ADDAA4 /* BaseAnchorViewController.swift in Sources */,
 				423EEDA12175FE85009712EF /* AnchorGroup.swift in Sources */,
