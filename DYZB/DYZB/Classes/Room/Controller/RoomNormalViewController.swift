@@ -23,9 +23,9 @@ class RoomNormalViewController: UIViewController , UIGestureRecognizerDelegate {
         navigationController?.setNavigationBarHidden(true, animated: true)
         
         //因為隱藏導覽列後 就不可以pop手勢返回上一頁
-        //依然保持手勢
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        //依然保持手勢(X) 不再需要 因為已經在自定義navigationController加入Pan手勢
+//        navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
         
     }
